@@ -4,13 +4,13 @@ jobs:
     ${{ if eq(parameters.os, 'macosx') }}:
       vmImage: macOS 10.14
     ${{ if eq(parameters.os, 'linux32') }}:
-      vmImage: Ubuntu 16.04
+      vmImage: ubuntu-latest
     ${{ if eq(parameters.os, 'linux64') }}:
-      vmImage: Ubuntu 16.04
+      vmImage: ubuntu-latest
     ${{ if eq(parameters.os, 'windows32') }}:
-      vmImage: vs2017-win2016
+      vmImage: windows-latest
     ${{ if eq(parameters.os, 'windows64') }}:
-      vmImage: vs2017-win2016
+      vmImage: windows-latest
   strategy:
     matrix:
       photutils:
