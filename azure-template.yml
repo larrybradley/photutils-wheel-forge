@@ -32,7 +32,7 @@ jobs:
   - script: mkdir wheelhouse
     displayName: Making wheelhouse directory
 
-  - ${{ if eq(variables['Source.BranchName'], 'master') }}:
+  - ${{ if eq(variables['Source.BranchName'], 'main') }}:
 
     - script: autowheel ${{ parameters.os }} --output-dir=wheelhouse --no-build-existing --package=$(package)
       displayName: Running autowheel
@@ -40,7 +40,7 @@ jobs:
         env:
           CC: clang
 
-  - ${{ if ne(variables['Source.BranchName'], 'master') }}:
+  - ${{ if ne(variables['Source.BranchName'], 'main') }}:
 
     - script: autowheel ${{ parameters.os }} --output-dir=wheelhouse --build-existing --package=$(package)
       displayName: Running autowheel
